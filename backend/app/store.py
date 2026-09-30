@@ -16,7 +16,8 @@ class Store:
         }
 
     def module_names(self) -> list[str]:
-        return sorted(self._tables)
+        # 下划线开头的是派车单这类内部凭据表，不进运营概览
+        return sorted(name for name in self._tables if not name.startswith("_"))
 
     def rows(self, module: str) -> list[dict[str, Any]]:
         return self._tables.setdefault(module, [])
@@ -26,6 +27,12 @@ class Store:
             if int(row.get("id", 0)) == entry_id:
                 return row
         return None
+
+    def reset(self) -> None:
+        """把内存数据恢复成示例初始状态，主要给业务规则自检使用。"""
+        self._tables = {
+            name: [dict(row) for row in rows] for name, rows in SEED_ROWS.items()
+        }
 
     def overview(self) -> dict[str, object]:
         modules: list[dict[str, object]] = []

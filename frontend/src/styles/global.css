@@ -33,3 +33,32 @@ body { margin: 0; background: #f6f8fb; color: #1f2937; }
 .link { border: none; background: none; color: var(--brand); cursor: pointer; padding: 0; }
 .page-foot { display: flex; justify-content: space-between; margin-top: 8px; font-size: 12px; color: var(--muted); }
 .error-text { color: #b42318; }
+.ok-text { color: #067647; }
+.link.danger { color: #b42318; }
+select { border: 1px solid var(--border); border-radius: 6px; padding: 5px 8px; font-size: 13px; background: #fff; }
+
+.board-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 12px; }
+.board-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; font-size: 13px; }
+.board-card.warn { border-color: #f0b429; }
+.board-card h3 { margin: 0 0 8px; font-size: 13px; }
+.board-empty { color: var(--muted); margin: 0; }
+.board-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.board-list li { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.mini-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.mini-table th, .mini-table td { border: 1px solid var(--border); padding: 5px 7px; text-align: left; }
+.detail-table th { width: 110px; color: var(--muted); font-weight: normal; }
+
+.badge { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 12px; }
+.badge-ok { background: #e7f6ee; color: #067647; }
+.badge-busy { background: #e8f0fe; color: #1f6feb; }
+.badge-stop { background: #fdecea; color: #b42318; }
+
+.modal-mask { position: fixed; inset: 0; background: rgba(15, 23, 42, 0.45); display: flex; align-items: center; justify-content: center; z-index: 20; }
+.modal { background: #fff; border-radius: 10px; padding: 18px 20px; width: 420px; max-width: calc(100vw - 32px); max-height: 85vh; overflow: auto; }
+.modal h3 { margin: 0 0 12px; font-size: 15px; }
+.modal-desc { color: var(--muted); font-size: 12px; margin: 0 0 12px; }
+.form-item { display: block; margin-bottom: 12px; }
+.form-item span { display: block; font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+.form-item input { width: 100%; border: 1px solid var(--border); border-radius: 6px; padding: 6px 8px; font-size: 13px; }
+.modal-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 8px; }
+.btn[disabled] { opacity: 0.6; cursor: not-allowed; }
